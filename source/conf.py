@@ -58,8 +58,7 @@ html_static_path = ['_static']
 
 
 def on_config_inited(app, config):
-    app.registry.builders["singlehtml"] = app.registry.builders["revealjs"]
-    app.registry.builders["epub"] = app.registry.builders["revealjs"]
+    app.registry.builders["html"] = app.registry.builders["revealjs"]
 
 
 def setup(app):
