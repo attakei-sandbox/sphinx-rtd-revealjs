@@ -10,7 +10,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
+import warnings
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -57,9 +58,18 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 
-def on_config_inited(app, config):
-    app.registry.builders["html"] = app.registry.builders["revealjs"]
+def override_builder(app, config):
+    override_target = os.environ.get("TO_REVEALJS", None)
+    if not override_target:
+        return
+    elif override_target not in app.registry.builders:
+        warnings.warn("Ivalid target")
+        return
+    elif "revealjs" not in app.registry.builders:
+        warnings.warn("sphinx-revealjs is not loaded")
+        return
+    app.registry.builders[override_target] = app.registry.builders["revealjs"]
 
 
 def setup(app):
-    app.connect("config-inited", on_config_inited)
+    app.connect("config-inited", override_builder)
