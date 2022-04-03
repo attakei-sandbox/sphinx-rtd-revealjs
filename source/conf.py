@@ -59,16 +59,18 @@ html_static_path = ['_static']
 
 
 def override_builder(app, config):
-    override_target = os.environ.get("TO_REVEALJS", None)
-    if not override_target:
-        return
-    elif override_target not in app.registry.builders:
-        warnings.warn("Ivalid target")
-        return
-    elif "revealjs" not in app.registry.builders:
-        warnings.warn("sphinx-revealjs is not loaded")
-        return
-    app.registry.builders[override_target] = app.registry.builders["revealjs"]
+    app.registry.builders["html"] = app.registry.builders["revealjs"]
+    # NOTE: This is not working cachings
+    # override_target = os.environ.get("TO_REVEALJS", None)
+    # if not override_target:
+    #     return
+    # elif override_target not in app.registry.builders:
+    #     warnings.warn("Ivalid target")
+    #     return
+    # elif "revealjs" not in app.registry.builders:
+    #     warnings.warn("sphinx-revealjs is not loaded")
+    #     return
+    # app.registry.builders[override_target] = app.registry.builders["revealjs"]
 
 
 def setup(app):
