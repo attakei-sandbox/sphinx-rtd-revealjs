@@ -10,20 +10,18 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import warnings
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'sphinx-revealjs on RTD'
-copyright = '2021, Kazuya Takei'
-author = 'Kazuya Takei'
+project = "sphinx-revealjs on RTD"
+copyright = "2021, Kazuya Takei"
+author = "Kazuya Takei"
 
 # The full version, including alpha/beta/rc tags
-release = '2021.9.18'
+release = "2021.9.18"
 
 
 # -- General configuration ---------------------------------------------------
@@ -32,12 +30,12 @@ release = '2021.9.18'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.todo',
-    'sphinx_revealjs',
+    "sphinx.ext.todo",
+    "sphinx_revealjs",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -50,12 +48,12 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = "alabaster"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 
 def override_builder(app, config):
@@ -65,7 +63,7 @@ def override_builder(app, config):
     # if not override_target:
     #     return
     # elif override_target not in app.registry.builders:
-    #     warnings.warn("Ivalid target")
+    #     warnings.warn("Invalid target")
     #     return
     # elif "revealjs" not in app.registry.builders:
     #     warnings.warn("sphinx-revealjs is not loaded")
