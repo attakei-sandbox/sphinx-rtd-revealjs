@@ -26,20 +26,17 @@ revealjs_script_conf = {
 }
 revealjs_script_plugins = [
     {
-        "name": "RevealCustomControls",
-        "src": "https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js",
+        "name": "RevealRTD",
+        "src": "sphinx-revealjs-rtd.js",
     },
 ]
 revealjs_js_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js",
-    "https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js",
     "rtd-badge.js",
 ]
 revealjs_css_files = [
     "revealjs/plugin/highlight/zenburn.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
     "https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css",
-    "https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css",
     "rtd-badge.css",
 ]
 
@@ -65,9 +62,7 @@ def _inject_rtd_version(app, pagename, templatename, context, doctree):
     context["READTHEDOCS"] = True
     if "READTHEDOCS" in context:
         output = app.builder.templates.render("_rtd-versions.html", context)
-        context["revealjs_page_confs"].append(
-            {"customcontrols": {"controls": [{"icon": output}]}}
-        )
+        context["revealjs_page_confs"].append({"readthedocs": output})
 
 
 def setup(app):
