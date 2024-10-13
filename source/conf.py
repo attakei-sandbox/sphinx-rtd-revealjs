@@ -60,9 +60,9 @@ def _inject_rtd_version(app, pagename, templatename, context, doctree):
     if not doctree:
         return
     context["READTHEDOCS"] = True
-    if "READTHEDOCS" in context:
-        output = app.builder.templates.render("_rtd-versions.html", context)
-        context["revealjs_page_confs"].append({"readthedocs": output})
+    # if "READTHEDOCS" in context:
+    #    output = app.builder.templates.render("_rtd-versions.html", context)
+    #    context["revealjs_page_confs"].append({"readthedocs": output})
 
 
 def setup(app):
