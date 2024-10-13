@@ -19,6 +19,7 @@ revealjs_html_theme = "revealjs-simple"
 revealjs_static_path = ["_static"]
 revealjs_script_conf = {
     "controls": True,
+    "controlsLayout": "bottom-left",
     "progress": True,
     "hash": True,
     "center": True,
