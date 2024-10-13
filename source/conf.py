@@ -66,5 +66,5 @@ def _inject_rtd_version(app, pagename, templatename, context, doctree):
 
 
 def setup(app):
-    app.connect("config-inited", override_builder)
+    # app.connect("config-inited", override_builder)
     app.connect("html-page-context", _inject_rtd_version)

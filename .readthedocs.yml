@@ -8,7 +8,7 @@ build:
 # Build documentation in the doc/ directory with Sphinx
 sphinx:
   configuration: source/conf.py
-  builder: html
+  builder: revealjs
 
 # Optionally build your docs in additional formats such as PDF and ePub
 formats: []
