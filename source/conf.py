@@ -9,6 +9,7 @@ release = "2024.5.10"
 extensions = [
     "sphinx.ext.todo",
     "sphinx_revealjs",
+    "atsphinx.revealjs_rtd",
 ]
 templates_path = ["_templates"]
 exclude_patterns = []
@@ -25,12 +26,6 @@ revealjs_script_conf = {
     "center": True,
     "transition": "slide",
 }
-revealjs_script_plugins = [
-    {
-        "name": "RevealRTD",
-        "src": "sphinx-revealjs-rtd.js",
-    },
-]
 revealjs_js_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js",
     "rtd-badge.js",
