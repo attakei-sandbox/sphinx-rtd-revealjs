@@ -4,8 +4,7 @@ sphinx-revealjs
 
 .. This toctree is only to link examples.
 
-:Based version: 1.3.0
-:Released: 2021-07-11
+:Based version: 3.0.4
 
 Overview
 ========
